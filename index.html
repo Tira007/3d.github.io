@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+ 
+<!-- Автор Dylan Wagstaff, http://www.alohatechsupport.net -->
+<script type="text/javascript">
+ 
+function theRotator() {
+	// Устанавливаем прозрачность всех картинок в 0
+	$('div#rotator ul li').css({opacity: 0.0});
+ 
+	// Берем первую картинку и показываем ее (по пути включаем полную видимость)
+	$('div#rotator ul li:first').css({opacity: 1.0});
+ 
+	// Вызываем функцию rotate для запуска слайдшоу, 5000 = смена картинок происходит раз в 5 секунд
+	set('rotate()');
+}
+ 
+function rotate() {	
+	// Берем первую картинку
+	var current = ($('div#rotator ul li.show')?  $('div#rotator ul li.show') : $('div#rotator ul li:first'));
+ 
+	// Берем следующую картинку, когда дойдем до последней начинаем с начала
+	var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div#rotator ul li:first') :current.next()) : $('div#rotator ul li:first'));	
+ 
+	// Расскомментируйте, чтобы показвать картинки в случайном порядке
+	// var sibs = current.siblings();
+	// var rndNum = Math.floor(Math.random() * sibs.length );
+	// var next = $( sibs[ rndNum ] );
+ 
+	// Подключаем эффект растворения/затухания для показа картинок, css-класс show имеет больший z-index
+	next.css({opacity: 0.0})
+	.addClass('show')
+	.animate({opacity: 1.0}, 1000);
+ 
+	// Прячем текущую картинку
+	current.animate({opacity: 0.0}, 1000)
+	.removeClass('show');
+};
+ 
+ function rotate1() {	
+	// Берем первую картинку
+	var current = ($('div#rotator ul li.show')?  $('div#rotator ul li.show') : $('div#rotator ul li:last'));
+ 
+	// Берем следующую картинку, когда дойдем до последней начинаем с начала
+	var prev = ((current.prev().length) ? ((current.prev().hasClass('show')) ? $('div#rotator ul li:last') :current.prev()) : $('div#rotator ul li:last'));	
+ 
+	// Расскомментируйте, чтобы показвать картинки в случайном порядке
+	// var sibs = current.siblings();
+	// var rndNum = Math.floor(Math.random() * sibs.length );
+	// var next = $( sibs[ rndNum ] );
+ 
+	// Подключаем эффект растворения/затухания для показа картинок, css-класс show имеет больший z-index
+	prev.css({opacity: 0.0})
+	.addClass('show')
+	.animate({opacity: 1.0}, 1000);
+ 
+	// Прячем текущую картинку
+	current.animate({opacity: 0.0}, 1000)
+	.removeClass('show');
+};
+
+$(document).ready(function() {		
+	// Запускаем слайдшоу
+	theRotator();
+});
+ 
+ 
+ 
+</script>
+</head>
+<body>
+<section class="header-section flex">
+     <section class="header-info"> 
+         <div class="wrapper">
+         <div class="header-info-block">
+         <div class="contact-address flex">
+            <p class="contact-text">Республика Бурятия, г. Улан-Удэ, пр-т Строителей 72</p>
+         </div>
+         <div class="contact-number-email flex">
+         <span class="phone-number flex">
+             <i class="phone-number-ico"></i>               <i>+79025341476, 24-14-76</i>
+         </span>
+         <span class="email-top">
+               <a href="mailto:objectuu@gmail.com" class="flex"> 
+               <i class="email-top-ico"></i> 
+               <i>objectuu@gmail.com</i>
+               </a>
+         </span>
+         </div>
+         </div>
+         </div>
+     </section>
+     <div class="header-top">
+        <div class="wrapper">
+        <div class="hedaer-logo">
+           <img src="img/3d_logo.png" alt="logo" class="img-logo">
+        </div>
+        <ul class="nav flex">
+           <li><a href="#">о клубе</a></li>
+           <li><a href="#">прайс-лист</a></li>
+           <li><a href="#">он-лайн оплата</a></li>
+           <li><a href="#">контактная информация</a></li>
+           <li><a href="#">Мы в соцсетях!</a></li>
+            </ul>
+            </div>
+     </div>
+     <div class="stock">
+        <div class="wrapper flex">
+           <h2 class="stock-info">Акции клуба</h2>
+           <div class="container">
+
+             <ul class="slides">
+              <li id="slide1">
+                <img src="img/dota.jpg" alt="" /></li>
+              <li id="slide2">
+                <img src="img/wot.jpg" alt="" /></li>
+              <li id="slide3">
+                <img src="img/birthday.jpg" alt="" /></li>
+              <li id="slide4">
+               <img src="img/morning.jpg" alt="" /></li>
+               <li id="slide5"><img src="img/test-img.jpg" alt="" /></li>
+               
+             </ul>
+
+             <ul class="thumbnails">
+               <li>
+              <a href="#slide1"><img src="img/dota.jpg" /></a>
+               </li>
+               <li>
+              <a href="#slide2"><img src="img/wot.jpg" /></a>
+               </li>
+               <li>
+              <a href="#slide3"><img src="img/birthday.jpg" /></a>
+               </li>
+               <li>
+              <a href="#slide4"><img src="img/morning.jpg" /></a>
+               </li>
+               <li>
+              <a href="#slide5"><img src="img/test-img.jpg" /></a>
+                </li>
+              </ul>
+           </div>
+        </div>
+     </div>
+<!--
+<div class="btn-arrow flex">
+<div class="btn-arrow-down wrapper flex">
+<img src="img/arrow-down.png" alt="стрелка">
+</div>
+</div> 
+-->
+</section>  
+</body>
+</html>
