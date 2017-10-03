@@ -3,6 +3,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  font-size: 16px;
 }
 /* ------------- 
   Общие настройки
@@ -18,7 +19,7 @@ body{
     position: relative;
 }
 .wrapper {
-    min-width: 600px;
+    min-width: 800px;
     max-width: 1100px;
     margin: 0 auto;
        
@@ -29,7 +30,6 @@ body{
     justify-content: flex-start;
     background-color: rgba(196, 8, 95, 0.88);
     background-image: url(../img/bacground.png);
-    
     background-size: cover;
     
     }
@@ -258,48 +258,39 @@ div#rotator ul li.show {
 }
 
 /*
-.stock-img img{
-    height: 60vh;
-    width: auto;
-    margin: 0 auto;
-}
-
-
-.stock-img ul{
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
-    }
-
-.stock-img li{
-    border: 5px ridge yellow;
- 
-}
+------------------------------
+    секция услуг клуба 
+-------------------------------
 */
-
-/*---------------------------
-стрелка вниз
-----------------------*/
-/*
-.btn-arrow{
+main{
+    height: 100vh;
+    background-color: #dbdbdb; 
+    padding: 80px 0;
+}
+.service>.wrapper{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   }
-.btn-arrow-down{
-    height: 20px;
-   }
-.btn-arrow-down img{
-    margin: 0 auto;
-    height: 10vh;
-    width: 40px;
-    margin-bottom: 20px;
-    border: 1px solid #ff0000;
-    border-radius: 50%;
-    background: #ff4e00;
-    }
-*/
+}
+.section-title{
+    font-size: 5rem;
+    text-transform: uppercase;
+}
 
+
+.feature{
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    
+}
+.feature li{
+    border: 1px solid red;
+    flex-direction: column;
+    flex-basis: 400px;
+    text-align: center;
+    justify-content: center;
+    height: 200px;
+}
 
 
 
