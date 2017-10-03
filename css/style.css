@@ -167,6 +167,7 @@ div#rotator ul li.show {
  flex-direction: row;
  justify-content: space-between;
  align-content: space-between;
+ flex-wrap: wrap;
  
 }
 /*
@@ -212,7 +213,7 @@ div#rotator ul li.show {
 .slides,
 .slides li {
   width: 97vmin;
-  height: auto;
+  height: 68vmin;
   
 }
 
